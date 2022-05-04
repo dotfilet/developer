@@ -1,0 +1,3 @@
+# https://github.com/artginzburg/sudo-touchid
+brew_install artginzburg/tap/sudo-touchid
+sudo /opt/homebrew/bin/brew services start sudo-touchid
