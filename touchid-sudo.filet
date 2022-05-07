@@ -1,8 +1,10 @@
 # https://github.com/artginzburg/sudo-touchid
 brew_install artginzburg/tap/sudo-touchid
 
+# Complains if already installed; but that's fine
 set +e
-sudo /opt/homebrew/bin/brew services stop sudo-touchid > /dev/null 2>&1
+sudo /opt/homebrew/bin/brew services start sudo-touchid > /dev/null 2>&1
 set -e
 
-sudo /opt/homebrew/bin/brew services start sudo-touchid > /dev/null 2>&1
+# Idempotent
+sudo-touchid > /dev/null
