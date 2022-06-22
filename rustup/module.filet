@@ -1,0 +1,17 @@
+use homebrew
+use zsh
+
+if type rustup > /dev/null; then
+  rustup self update
+else
+  cd $(mktemp -d)
+
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > ./rustup-init
+  chmod +x ./rustup-init
+
+  ./rustup-init --no-modify-path -y
+
+  cd -
+fi
+
+zsh_prepend_path "~"/.cargo/bin
