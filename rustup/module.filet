@@ -2,7 +2,7 @@ use homebrew
 use zsh
 
 if type rustup > /dev/null; then
-  rustup self update
+  rustup update
 else
   cd $(mktemp -d)
 
